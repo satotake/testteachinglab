@@ -1,0 +1,22 @@
+{
+  "name": "teachinglab-site",
+  "version": "1.0.0",
+  "description": "Packages for build process of hugo site for teachinglab.org",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/james-minton/teachinglab.git"
+  },
+  "author": "James Minton, Amy Groshek <amy@amygroshek.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/james-minton/teachinglab/issues"
+  },
+  "homepage": "https://github.com/james-minton/teachinglab#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.4"
+  }
+}
