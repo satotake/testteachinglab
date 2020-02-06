@@ -22,3 +22,7 @@ To test the twitter feed function, you need to also run `npm run lambda-serve` i
 ```
 hugo
 ```
+
+## Deploy
+
+To deploy, merge your working branch into `master` and `git push`.
