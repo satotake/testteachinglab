@@ -1,10 +1,12 @@
 {
   "name": "teachinglab-site",
   "version": "1.0.0",
-  "description": "Packages for build process of hugo site for teachinglab.org",
+  "description": "Packages for build process of hugo site for https://teachinglab.org",
   "main": "postcss.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lambda-serve": "netlify-lambda serve ./src/api",
+    "lambda-build": "netlify-lambda build ./src/api"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,11 @@
   },
   "homepage": "https://github.com/james-minton/teachinglab#readme",
   "dependencies": {
-    "autoprefixer": "^9.7.4"
+    "autoprefixer": "^9.7.4",
+    "dotenv": "^8.2.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^1.6.3"
   }
 }

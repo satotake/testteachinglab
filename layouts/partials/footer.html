@@ -78,10 +78,9 @@
                 </div>
             </div>
         <script src="https://kit.fontawesome.com/cbd2e66978.js"></script>
-        {{ if eq (getenv "NODE_ENV") "development" }}
-          <!-- If site is being served (ostensibly dev) provide local path -->
+        {{ if .Site.IsServer }}
           <script>
-            var tweetPath = {{ .Site.Params.localFunctionsPath }};
+            var tweetPath = {{ .Site.Params.localFunctionsPath }} + '/' + {{ .Site.Params.functionsPath }};
           </script>
         {{ else }}
           <!-- If site is production, different path to fetch tweets -->
