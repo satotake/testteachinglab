@@ -15,6 +15,8 @@ npm install -g postcss-cli # Usually works better if this runs globally. See htt
 hugo server -w
 ```
 
+To test the twitter feed function, you need to also run `npm run lambda-serve` in a separate terminal session. This serves the lambda function for the twitter feed script to hit. This script requires special twitter dev credentials. On Netlify, these are provided as environment variables. When working locally, create a `.env` file and add the credentials there.
+
 ## Build
 
 ```
