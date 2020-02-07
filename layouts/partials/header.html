@@ -14,9 +14,9 @@
 
 <nav id="topNav">
     <ul>
-        {{ range .Site.Menus.main }}
+        {{/* {{ range .Site.Menus.main }}
           <p></p>
-          {{ if ne $.Params.headless true }}
+          <!-- {{ if ne $.Params.headless true }} -->
             {{ if isset $.Params "contenttype"  }}
                 {{ if ne $.Params.contenttype "cases" }}
                 <li><a class="{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a></li>
@@ -26,8 +26,19 @@
             {{ else  }}
                 <li><a class="{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
-          {{ end }}
-        {{ end }}
+          <!-- {{ end }} -->
+        {{ end }} */}}
+        
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ $active := "" }}
+              {{ $isMenu := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+              {{ if or $isMenu (eq $currentPage.Title .Name) }}
+                {{ $active = "active" }}
+              {{ end }}
+              <li><a class="{{ $active }}" href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        
     </ul>
 
 </nav>
