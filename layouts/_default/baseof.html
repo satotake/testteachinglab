@@ -58,16 +58,9 @@
 
     <title>{{ $.Site.Title }}</title>
     <link rel="icon" type="image/png" href="/images/icons/favicon.png">
-    {{/* {{ $resetcss := resources.Get "css/imports/reset.css" }}
-    <p>{{$resetcss}}</p>
-    {{ $style := $resetcss | resources.PostCSS }} */}}
     <link rel="stylesheet" href="/css/imports/reset.css"/>
     <link rel="stylesheet" href="/css/imports/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/imports/aos.css" />
-    {{/* {{ $tl := resources.Get "scss/tl.scss" | resources.ToCSS }}
-    {{ $tlpost := $tl | resources.PostCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $tlpost.RelPermalink }}" /> */}}
-
     {{ if .Site.IsServer }}
       <!-- If site is being served (ostensibly dev) don't compress and minify -->
       {{ $options := (dict "targetPath" "style.css" "outputStyle" "expanded" "enableSourceMap" true ) }}
