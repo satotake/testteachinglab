@@ -58,9 +58,9 @@
 
     <title>{{ $.Site.Title }}</title>
     <link rel="icon" type="image/png" href="/images/icons/favicon.png">
+    <link rel="stylesheet" href="/css/imports/reset.css"/>
     <link rel="stylesheet" href="/css/imports/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/imports/aos.css" />
-    <link rel="stylesheet" href="/css/imports/main.css"/>
     {{ if .Site.IsServer }}
       <!-- If site is being served (ostensibly dev) don't compress and minify -->
       {{ $options := (dict "targetPath" "style.css" "outputStyle" "expanded" "enableSourceMap" true ) }}
