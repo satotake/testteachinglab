@@ -11,21 +11,11 @@
 {{ $doResponsive := .imgParams.Get "doresponsive" }}
 {{ $options := .imgParams.Get "options" }}
 {{ $options2x := .imgParams.Get "options2x" }}
-{{ $img := strings.TrimPrefix "/images/uploads/" (.imgParams.Get "image") }}
+{{ $img := strings.TrimPrefix "/uploads/" (strings.TrimPrefix "/images/uploads/" (.imgParams.Get "image")) }}
+{{/* For degugging: */}}
 {{/* <p>$img = {{$img}}, $options = {{$options}}, $alt = {{$alt}}, $action = {{$action}}, $doResponsive = {{$doResponsive}}</p> */}}
-{{/* {{ with site.GetPage "images/uploads/_index.md" }}
-  {{ with .Resources.GetMatch $img }}
-    {{ $processed := .Resize $options }}
-    {{ if $doResponsive }}
-      {{ $processed2x := .Resize $options2x }}
-      <img src="{{ $processed2x.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height}}" alt="{{ $alt }}" srcset="{{ $processed.RelPermalink }}, {{ $processed2x.RelPermalink }} 2x">
-    {{ else }}
-      <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height}}" alt="{{ $alt }}">
-    {{ end }}
-  {{ end }}
-{{ end }} */}}
 {{ if eq $action "Fit"}}
-    {{ with site.GetPage "images/uploads/index.md" }}
+    {{ with site.GetPage "uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fit $options }}
             {{ if $doResponsive }}
@@ -37,7 +27,7 @@
         {{ end }}
     {{ end }}
 {{ else if eq $action "Resize"}}
-    {{ with site.GetPage "images/uploads/index.md" }}
+    {{ with site.GetPage "uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Resize $options }}
             {{ if $doResponsive }}
@@ -49,7 +39,7 @@
         {{ end }}
     {{ end }}
 {{ else if eq $action "Fill"}}
-    {{ with site.GetPage "images/uploads/index.md" }}
+    {{ with site.GetPage "uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fill $options }}
             {{ if $doResponsive }}
