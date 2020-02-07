@@ -25,7 +25,7 @@
   {{ end }}
 {{ end }} */}}
 {{ if eq $action "Fit"}}
-    {{ with site.GetPage "images/uploads/_index.md" }}
+    {{ with site.GetPage "images/uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fit $options }}
             {{ if $doResponsive }}
@@ -37,7 +37,7 @@
         {{ end }}
     {{ end }}
 {{ else if eq $action "Resize"}}
-    {{ with site.GetPage "images/uploads/_index.md" }}
+    {{ with site.GetPage "images/uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Resize $options }}
             {{ if $doResponsive }}
@@ -49,7 +49,7 @@
         {{ end }}
     {{ end }}
 {{ else if eq $action "Fill"}}
-    {{ with site.GetPage "images/uploads/_index.md" }}
+    {{ with site.GetPage "images/uploads/index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fill $options }}
             {{ if $doResponsive }}
