@@ -19,7 +19,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   localFunctionsPath = "http://localhost:9000"
   productionFunctionsPath = "https://www.teachinglab.org/.netlify/functions"
   functionsPath = ".netlify/functions"
-  # productionFunctionsPath = "https://5d1bed96222b710008212316--eloquent-gates-b65172.netlify.com/.netlify/functions"
 
 [[menu.main]]
 name = "Home"

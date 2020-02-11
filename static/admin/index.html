@@ -11,7 +11,7 @@
   <script src="https://unpkg.com/netlify-cms@^2.10.7/dist/netlify-cms.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,500i,600,700" rel="stylesheet">
   <script>
-    
+
   CMS.registerPreviewStyle("/css/cms.css");
   CMS.registerEditorComponent({
     // Internal id of the component
@@ -27,13 +27,12 @@
     pattern: /^{{<\s*figure (?:(src|caption)="([^"]*)")*\s*(?:(src|caption)="([^"]*)")*\s* (?:(src|caption)="([^"]*)")*\s*(?:(src|caption)="([^"]*)")*\s*>}}$/,
     // Function to extract data elements from the regexp match
     fromBlock: function(match) {
-  
+
       var src = "";
       var caption = "";
 
-  
-      console.log(match);
-  
+      // console.log(match);
+
       for(var i = 1; i < match.length; i+=2) {
         if (match[i] !== undefined) {
           if (match[i].indexOf("src") !== -1) {
@@ -45,15 +44,14 @@
           } else if (match[i].indexOf("width") !== -1) {
             if (!isNaN(match[i+1])) {
               width = match[i+1];
-            }              
-          }            
+            }
+          }
         }
       }
-  
+
       return {
         src: src,
         caption: caption,
-      
       };
     },
     // Function to create a text block from an instance of this component
@@ -63,18 +61,17 @@
     // Preview output for this component. Can either be a string or a React component
     // (component gives better render performance)
     toPreview: function(obj) {
-  
+
       var output = "";
-  
+
         output = 
           '<img src="' + obj.src + '" />'
         ;
-           
-  
+
       if (obj.caption.length > 0) {
         output += '<br> <i style="font-size: 0.7em">'+ obj.caption +'</i>';
       }
-  
+
       return ( output );
     }
   });
