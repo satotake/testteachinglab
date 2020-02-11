@@ -22,6 +22,12 @@ ul.blogfeed {
             }
             img {
                 max-width: 100%;
+                object-fit: scale-down;
+                @include for-phone-only {
+                  margin-left: auto;
+                  margin-right: auto;
+                  display: block;
+                }
                 @include for-768-up {
                     max-width: 210px;
                 }
@@ -32,7 +38,6 @@ ul.blogfeed {
                     max-width: 248px;
                     margin-top: 1rem;
                 }
-                
             }
         }
         &.blog-excerpt {
